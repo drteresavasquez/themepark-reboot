@@ -15,7 +15,7 @@ dataCalls.getAllAreas()
         keys.forEach((item) => {
             console.log(results[item]);
             document.getElementById("body").innerHTML +=
-                `<div class="col s4">
+                `<div class="col s4" id="${results[item].id}">
         <div class="card">
     <div class="card-image activator waves-effect waves-block waves-light">
       <img class="activator" src="${images[results[item].id - 1]}">
@@ -29,5 +29,8 @@ dataCalls.getAllAreas()
     </div>
   </div>`;
 
+  document.getElementById(`${results[item].id}`).style.background = `#${results[item].colorTheme}`;
+
         });
+        
     });

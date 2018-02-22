@@ -29,9 +29,15 @@ body {
 
   img.activator{
     height: 180px;
-    visibility: hidden;
+    opacity: 0.6;
   }
 
   .card{
     background: none !important;
+  }
+
+  .card-title.activator.grey-text.text-darken-4{
+    color: white !important;
+    background: black;
+    
   }
