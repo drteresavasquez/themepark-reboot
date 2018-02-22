@@ -2,12 +2,36 @@ body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: url('../images/bg.gif');
+    background-size: cover;
   }
 
   nav{
-    background: black;
+    background: rgba($color: #000000, $alpha: .5);
   }
 
   main {
     flex: 1 0 auto;
+  }
+
+  .container.body{
+    padding-top: 20px;
+  }
+
+  .searchBar{
+    width: 300px !important;
+    margin-right: 20px !important;
+  }
+
+  .page-footer{
+    background: none;
+  }
+
+  img.activator{
+    height: 180px;
+    visibility: hidden;
+  }
+
+  .card{
+    background: none !important;
   }
