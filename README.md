@@ -12,19 +12,19 @@ git clone https://github.com/drteresavasquez/themepark-reboot.git
 
 ### Installing
 
-A step by step series of examples that tell you have to get a development env running
-
-Say what the step will be
-
+Navigate to the lib directory
 ```
 cd lib
 ```
+Install all dependencies
 ```
 npm install
 ```
+Run Grunt
 ```
 grunt
 ```
+Start your local server
 ```
 hs -o
 ```
