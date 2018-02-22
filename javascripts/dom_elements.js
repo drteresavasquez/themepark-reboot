@@ -17,13 +17,11 @@ dataCalls.getAllAreas()
             document.getElementById("body").innerHTML +=
                 `<div class="col s4">
         <div class="card">
-    <div class="card-image waves-effect waves-block waves-light">
+    <div class="card-image activator waves-effect waves-block waves-light">
       <img class="activator" src="${images[results[item].id - 1]}">
-    </div>
-    <div class="card-content">
       <span class="card-title activator grey-text text-darken-4">${results[item].name}<i class="material-icons right">more_vert</i></span>
-     
     </div>
+
     <div class="card-reveal">
       <span class="card-title grey-text text-darken-4">${results[item].name}<i class="material-icons right">close</i></span>
       <p>${results[item].description}</p>
@@ -32,20 +30,4 @@ dataCalls.getAllAreas()
   </div>`;
 
         });
-
-        document.getElementById("body").innerHTML += `<div class="col s4">
-            <div class="card">
-        <div class="card-image waves-effect waves-block waves-light">
-        <img class="activator" src="${images[7]}">
-        </div>
-        <div class="card-content">
-        <span class="card-title activator grey-text text-darken-4">Itinerary App<i class="material-icons right">more_vert</i></span>
-        <p><a href="#">This is a link</a></p>
-        </div>
-        <div class="card-reveal">
-        <span class="card-title grey-text text-darken-4">Itinerary App<i class="material-icons right">close</i></span>
-        <p>Here is some more information about this product that is only revealed once clicked on.</p>
-        </div>
-        </div>
-        </div>`;
     });
