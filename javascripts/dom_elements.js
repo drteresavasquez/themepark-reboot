@@ -13,8 +13,8 @@ dataCalls.getAllAreas()
     .then((results) => {
         let keys = Object.keys(results);
         keys.forEach((item) => {
-            // console.log(results[item]);
-            document.getElementById("body").innerHTML +=
+    // begin creating the interactive card elements on the DOM
+        document.getElementById("body").innerHTML +=
                 `<div class="col s4" id="${results[item].id}">
                     <div class="card">
                     <div class="card-image activator waves-effect waves-block waves-light">
@@ -39,11 +39,7 @@ dataCalls.getAllAreas()
                 </div>
             </div>`;
 
-            // dataCalls.getAllAttractions(`${results[item].id}`)
-            // .then((data)=>{
-            //     console.log(Object.keys(data));
-            // });
-
+    // Call to attractions and merge with areas
             dataCalls.getAllAttractions(`${results[item].id}`)
             .then((data)=>{
                 // console.log(data);
@@ -58,26 +54,21 @@ dataCalls.getAllAreas()
                 });
             });
 
-
-
-
+    // Set each area background color
         document.getElementById(`${results[item].id}`).style.background = `#${results[item].colorTheme}`;
         });
 
+    // get modals ready for the click
         $(document).ready(function () {
             $('.modal').modal();
         });
 
+    // make accordions ready
         $(document).ready(function(){
             $('.collapsible').collapsible();
           });
               
-        
     });
-
-    //call firebase for the attractions and pass in the area_id
-
 module.exports = {
     
 };
-    // document.getElementById(`modal${results[item].id}text`).innerHTML = `${results[item].name}`;
