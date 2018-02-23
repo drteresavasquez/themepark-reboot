@@ -13,6 +13,34 @@ let getAllAreas = function() {
 	});
 };
 
+let getIndTypes = function(id) {
+	return new Promise(function(resolve, reject) {
+
+		let getType = new XMLHttpRequest();
+		getType.open('GET', `https://ux-ui-theme-park.firebaseio.com/attraction_types.json?orderBy="id"&equalTo=${id}`);
+		getType.send();
+		getType.addEventListener("load", (event) => {
+			let type = JSON.parse(event.target.responseText);
+			resolve(type);
+		});
+	});
+};
+
+let getAllAttractions = function(id) {
+	return new Promise(function(resolve, reject) {
+
+		let getAttractions = new XMLHttpRequest();
+		getAttractions.open('GET', `https://ux-ui-theme-park.firebaseio.com/attractions.json?orderBy="area_id"&equalTo=${id}`);
+		getAttractions.send();
+		getAttractions.addEventListener("load", (event) => {
+			let attractions = JSON.parse(event.target.responseText);
+			resolve(attractions);
+		});
+	});
+};
+
 module.exports = {
-    getAllAreas
+    getAllAreas,
+    getAllAttractions,
+    getIndTypes
 };
