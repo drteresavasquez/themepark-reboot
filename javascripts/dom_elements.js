@@ -8,6 +8,7 @@ let images = ["https://i1.wp.com/howtobeagraduate.com/wp-content/uploads/2017/06
 let date = new Date();
 let yyyy = date.getFullYear();
 document.getElementById("footer").innerHTML = `© ${yyyy} Unitainment. All Rights Reserved`;
+$( document ).ready(function(){});
 
 dataCalls.getAllAreas()
     .then((results) => {
@@ -15,7 +16,7 @@ dataCalls.getAllAreas()
         keys.forEach((item) => {
     // begin creating the interactive card elements on the DOM
         document.getElementById("body").innerHTML +=
-                `<div class="col s4" id="${results[item].id}">
+                `<div class="col s12 l4" id="${results[item].id}">
                     <div class="card">
                     <div class="card-image activator waves-effect waves-block waves-light">
                     <img class="activator" src="${images[results[item].id - 1]}">
@@ -46,7 +47,7 @@ dataCalls.getAllAreas()
                 let aKeys = Object.keys(data);
                 // dataCalls.getIndTypes()
                 aKeys.forEach((attr)=>{
-                    console.log("IND TYPES", dataCalls.getIndTypes(`${data[attr].type_id}`));
+                    // console.log("IND TYPES", dataCalls.getIndTypes(`${data[attr].type_id}`));
                     document.getElementById(`modal${results[item].id}text`).innerHTML += `<li>
                       <div class="collapsible-header">${data[attr].name}</div>
                       <div class="collapsible-body"><span>${data[attr].description}</span></div>

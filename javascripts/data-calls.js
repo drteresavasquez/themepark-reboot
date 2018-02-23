@@ -13,6 +13,19 @@ let getAllAreas = function() {
 	});
 };
 
+let getAreaFive = () =>{
+    return new Promise(function(resolve, reject) {
+
+		let getAreas = new XMLHttpRequest();
+		getAreas.open('GET', 'https://ux-ui-theme-park.firebaseio.com/attractions.json?orderBy="type_id"&equalTo=5');
+		getAreas.send();
+		getAreas.addEventListener("load", (event) => {
+			let areas = JSON.parse(event.target.responseText);
+			resolve(areas);
+		});
+	});
+};
+
 let getIndTypes = function(id) {
 	return new Promise(function(resolve, reject) {
 
@@ -42,5 +55,6 @@ let getAllAttractions = function(id) {
 module.exports = {
     getAllAreas,
     getAllAttractions,
-    getIndTypes
+    getIndTypes,
+    getAreaFive
 };
