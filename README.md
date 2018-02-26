@@ -39,7 +39,15 @@ hs -o
 * Firebase for data storage and retrieval
 
 ## Screen Shots
+
+### Main Screen
 ![Home Screen](/images/thempark-reboot.jpeg)
+
+### Search Screen
+![Home Screen](/images/thempark-search.jpeg)
+
+### Area Info
+![Home Screen](/images/thempark-areainfo.jpeg)
 
 ## Authors
 
