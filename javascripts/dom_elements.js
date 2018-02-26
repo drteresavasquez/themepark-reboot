@@ -20,7 +20,7 @@ dataCalls.getAllAreas()
                 `<div class="col s12 l4" id="${results[item].id}">
                     <div class="card">
                     <div class="card-image activator waves-effect waves-block waves-light">
-                    <img class="activator" src="${images[results[item].id - 1]}">
+                    <div class="activator"></div>
                     <span class="card-title activator grey-text text-darken-4">${results[item].name}<i class="material-icons right">more_vert</i></span>    
                 </div>
                 <div class="card-content">
@@ -60,7 +60,8 @@ dataCalls.getAllAreas()
                 });
 
             // Set each area background color
-            document.getElementById(`${results[item].id}`).style.background = `#${results[item].colorTheme}`;
+            let element = document.getElementById(`${results[item].id}`);
+            element.style.background = `#${results[item].colorTheme}`;
         });
 
         // get modals ready for the click
@@ -96,9 +97,8 @@ let displaySearchResults = (array) => {
         array.forEach((item) => {
             document.getElementById("searchCollapse").innerHTML += `
         <li>
-          <div class="collapsible-header">${item.name}</div>
+          <div class="collapsible-header"><a href="#"><strong>${item.name}</a>&nbsp;- Area ${item.area_id}</strong></div>
           <div class="collapsible-body searchDescription"><span>
-            <h4>Area ${item.area_id}</h4>
           ${item.description}</span></div>
         </li>`;
         });

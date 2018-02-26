@@ -1,76 +1,107 @@
 <!DOCTYPE html>
 <html>
-	<head>
-			<title>Theme Park Reboot</title>
-			<!-- STYLESHEETS -->
-			<!--Import Google Icon Font-->
-			<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-			<!-- Compiled and minified CSS -->
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
-			
-			
-			<link rel="stylesheet" type="text/css" href="css/main.css">
-			<!-- END STYLESHEETS -->
-		</head>
-		<!-- END STYLESHEETS -->
-	</head>
-	<body>
 
-		<!-- NAVIGATION START -->
-		<div class="navbar-fixed">
-			<!-- Dropdown Structure -->
+<head>
+	<title>Theme Park Reboot</title>
+	<!-- STYLESHEETS -->
+	<!--Import Google Icon Font-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
+
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<!-- END STYLESHEETS -->
+</head>
+<!-- END STYLESHEETS -->
+</head>
+
+<body>
+
+	<!-- NAVIGATION START -->
+	<div class="navbar-fixed">
+		<!-- Dropdown Structure -->
 		<ul id="dropdown1" class="dropdown-content">
-				<li><a href="#!">9:00 AM</a></li>
-				<li><a href="#!">10:00 AM</a></li>
-				<li><a href="#!">11:00 AM</a></li>
-				<li><a href="#!">12:00 AM</a></li>
-				<li><a href="#!">1:00 PM</a></li>
-				<li><a href="#!">2:00 PM</a></li>
-				<li><a href="#!">3:00 PM</a></li>
-				<li><a href="#!">4:00 PM</a></li>
-				<li><a href="#!">5:00 PM</a></li>
-			</ul>
-			<nav>
-				<div class="nav-wrapper">
-					<a href="#!" class="brand-logo">Logo</a>
-					<ul class="right hide-on-med-and-down">
-						<li class="searchBar"><input id="search" type="text" placeholder="Search The Park"></li>
-						<!-- Dropdown Trigger -->
-						<li><a class="dropdown-button" href="#!" data-activates="dropdown1">Select a Time<i class="material-icons right">arrow_drop_down</i></a></li>
-    
-					</ul>
-				</div>
-			</nav>
-		  </div>
-				  <!-- NAVIGATION END -->
-	
+			<li>
+				<a href="#!">9:00 AM</a>
+			</li>
+			<li>
+				<a href="#!">10:00 AM</a>
+			</li>
+			<li>
+				<a href="#!">11:00 AM</a>
+			</li>
+			<li>
+				<a href="#!">12:00 AM</a>
+			</li>
+			<li>
+				<a href="#!">1:00 PM</a>
+			</li>
+			<li>
+				<a href="#!">2:00 PM</a>
+			</li>
+			<li>
+				<a href="#!">3:00 PM</a>
+			</li>
+			<li>
+				<a href="#!">4:00 PM</a>
+			</li>
+			<li>
+				<a href="#!">5:00 PM</a>
+			</li>
+		</ul>
+		<nav>
+			<div class="nav-wrapper">
+				<a href="#!" class="brand-logo">Logo</a>
+				<ul class="right hide-on-med-and-down">
+					<li class="searchBar">
+						<input id="search" type="text" placeholder="Search The Park">
+					</li>
+					<!-- Dropdown Trigger -->
+					<li>
+						<a class="dropdown-button" href="#!" data-activates="dropdown1">Select a Time
+							<i class="material-icons right">arrow_drop_down</i>
+						</a>
+					</li>
+
+				</ul>
+			</div>
+		</nav>
+	</div>
+	<!-- NAVIGATION END -->
+
 	<!-- CONTAINER START -->
 	<main>
-		<div class="container body">
-			<div id="body" class="row">
+		<div class="container">
+			<div class="row">
+				<!-- <div id="sidebar" class="col l3">
+				</div> -->
+				<div id="body" class="col l12">
+					<!-- map dynamically populated here -->
+				</div>
 			</div>
-			
 		</div>
 	</main>
 	<!-- CONTAINER END -->
-	
-<!-- FOOTER START -->
-<footer class="page-footer">
-	<div class="footer-copyright">
-	  <div id="footer" class="container">
-	  </div>
-	</div>
-  </footer>
-	  
-<!-- FOOTER END -->
+
+	<!-- FOOTER START -->
+	<footer class="page-footer">
+		<div class="footer-copyright">
+			<div id="footer" class="container">
+			</div>
+		</div>
+	</footer>
+
+	<!-- FOOTER END -->
 
 
-<!-- SCRIPTS -->
-  		<!-- JQUERY -->
-			<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  		<!-- Materialize -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
-		<script src="dist/app.js"></script>
-<!-- END SCRIPTS -->
-	</body>
+	<!-- SCRIPTS -->
+	<!-- JQUERY -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<!-- Materialize -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
+	<script src="dist/app.js"></script>
+	<!-- END SCRIPTS -->
+</body>
+
 </html>
