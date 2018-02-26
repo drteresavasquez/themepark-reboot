@@ -51,7 +51,7 @@ dataCalls.getAllAreas()
                                 let tKeys = Object.keys(response);
                                 tKeys.forEach((type) => {
                                     document.getElementById(`modal${results[item].id}text`).innerHTML += `<li>
-                      <div class="collapsible-header">${data[attr].name} (${response[type].name})</div>
+                      <div class="collapsible-header"><a href="#">${data[attr].name}</a> &nbsp;(${(response[type].name).toUpperCase()})</div>
                       <div class="collapsible-body"><span>${data[attr].description}</span></div>
                     </li>`;
                                 });
