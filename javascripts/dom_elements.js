@@ -8,14 +8,15 @@ let images = ["https://i1.wp.com/howtobeagraduate.com/wp-content/uploads/2017/06
 let date = new Date();
 let yyyy = date.getFullYear();
 document.getElementById("footer").innerHTML = `© ${yyyy} Unitainment. All Rights Reserved`;
-$( document ).ready(function(){});
+$(document).ready(function () {});
 
 dataCalls.getAllAreas()
     .then((results) => {
         let keys = Object.keys(results);
+        document.getElementById("body").innerHTML = " ";
         keys.forEach((item) => {
-    // begin creating the interactive card elements on the DOM
-        document.getElementById("body").innerHTML +=
+            // begin creating the interactive card elements on the DOM
+            document.getElementById("body").innerHTML +=
                 `<div class="col s12 l4" id="${results[item].id}">
                     <div class="card">
                     <div class="card-image activator waves-effect waves-block waves-light">
@@ -40,36 +41,77 @@ dataCalls.getAllAreas()
                 </div>
             </div>`;
 
-    // Call to attractions and merge with areas
+            // Call to attractions and merge with areas
             dataCalls.getAllAttractions(`${results[item].id}`)
-            .then((data)=>{
-                // console.log(data);
-                let aKeys = Object.keys(data);
-                // dataCalls.getIndTypes()
-                aKeys.forEach((attr)=>{
-                    // console.log("IND TYPES", dataCalls.getIndTypes(`${data[attr].type_id}`));
-                    document.getElementById(`modal${results[item].id}text`).innerHTML += `<li>
-                      <div class="collapsible-header">${data[attr].name}</div>
+                .then((data) => {
+                    let aKeys = Object.keys(data);
+                    aKeys.forEach((attr) => {
+                        dataCalls.getIndTypes(`${data[attr].type_id}`)
+                            .then((response) => {
+                                let tKeys = Object.keys(response);
+                                tKeys.forEach((type) => {
+                                    document.getElementById(`modal${results[item].id}text`).innerHTML += `<li>
+                      <div class="collapsible-header">${data[attr].name} (${response[type].name})</div>
                       <div class="collapsible-body"><span>${data[attr].description}</span></div>
                     </li>`;
+                                });
+                            });
+                    });
                 });
-            });
 
-    // Set each area background color
-        document.getElementById(`${results[item].id}`).style.background = `#${results[item].colorTheme}`;
+            // Set each area background color
+            document.getElementById(`${results[item].id}`).style.background = `#${results[item].colorTheme}`;
         });
 
-    // get modals ready for the click
+        // get modals ready for the click
         $(document).ready(function () {
             $('.modal').modal();
         });
 
-    // make accordions ready
-        $(document).ready(function(){
+        // make accordions ready
+        $(document).ready(function () {
             $('.collapsible').collapsible();
-          });
-              
+        });
+
     });
+
+let displaySearchResults = (array) => {
+    document.getElementById("body").innerHTML = " ";
+    $(document).ready(function () {
+        $('.collapsible').collapsible();
+    });
+    document.getElementById("body").innerHTML +=
+        `<h3>Your Search Returned ${array.length} Results</h3>`;
+
+    if (array.length === 0) {
+        document.getElementById("body").innerHTML +=
+            `<h5>Try Your Search Using Another Term</h5>
+            <a id="searchReturn" class="waves-effect waves-light btn-large">Return Home</a>`;
+        document.getElementById("searchReturn").addEventListener("click", function (e) {
+            location.reload();
+        });
+    } else {
+        document.getElementById("body").innerHTML +=
+            `<ul id="searchCollapse" class="collapsible popout" data-collapsible="accordion">`;
+        array.forEach((item) => {
+            document.getElementById("searchCollapse").innerHTML += `
+        <li>
+          <div class="collapsible-header">${item.name}</div>
+          <div class="collapsible-body searchDescription"><span>
+            <h4>Area ${item.area_id}</h4>
+          ${item.description}</span></div>
+        </li>`;
+        });
+        document.getElementById("body").innerHTML +=
+            `</ul>
+    <a id="searchReturn" class="waves-effect waves-light btn-large">Return Home</a>`;
+        document.getElementById("searchReturn").addEventListener("click", function (e) {
+            location.reload();
+        });
+    }
+};
+
+
 module.exports = {
-    
+    displaySearchResults
 };
