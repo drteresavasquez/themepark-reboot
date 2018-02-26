@@ -44,10 +44,10 @@ hs -o
 ![Home Screen](/images/thempark-reboot.jpeg)
 
 ### Search Results Screen
-![Search Results Screen](/images/thempark-search.jpeg)
+![Search Results Screen](/images/thempark-reboot-search.jpeg)
 
 ### Area Info
-![Area Info Screen](/images/thempark-areainfo.jpeg)
+![Area Info Screen](/images/thempark-reboot-areainfo.jpeg)
 
 ## Authors
 
