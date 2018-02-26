@@ -43,11 +43,11 @@ hs -o
 ### Main Screen
 ![Home Screen](/images/thempark-reboot.jpeg)
 
-### Search Screen
-![Home Screen](/images/thempark-search.jpeg)
+### Search Results Screen
+![Search Results Screen](/images/thempark-search.jpeg)
 
 ### Area Info
-![Home Screen](/images/thempark-areainfo.jpeg)
+![Area Info Screen](/images/thempark-areainfo.jpeg)
 
 ## Authors
 
