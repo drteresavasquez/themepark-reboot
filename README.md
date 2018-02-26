@@ -38,6 +38,9 @@ hs -o
 * Materialize
 * Firebase for data storage and retrieval
 
+## Screen Shots
+![Home Screen](/images/thempark-reboot.jpeg)
+
 ## Authors
 
 * **Dr. Teresa Vasquez** - *Initial work*
